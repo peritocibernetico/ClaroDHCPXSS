@@ -4,8 +4,9 @@ There is a vulnerability in Kaon CG3000 router of Claro provider in Brazil.<br>
 The firmware tested was 1.01.43, CG3000 Rev V1.2.<br>
 <br>
 The operating system of the router does not sanitize the data coming from DHCP protocol.<br>
-So, it is possible to exploit a authenticated stored XSS (Cross Site Scripting) in the first page of the system, using this protocol.<br>
+So, it is possible to exploit a authenticated stored XSS (Cross Site Scripting) in the first page of the system, using this protocol.<br><br>
 This page will be the first, right after authentication process, to be viewed by the router admin.<br>
+Therefore, this code will be automatically executed after logon.<br><br>
 Using the "dhcpcd" command, the vulnerability can be exploited.<br>
 <br>
 dhcpcd -k wlan0<br>
